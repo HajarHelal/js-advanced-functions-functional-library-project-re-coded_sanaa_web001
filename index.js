@@ -45,8 +45,8 @@ const fi = (function() {
      if (!(collection instanceof Array))
        collection = Object.values(collection)
 
-     for (let idx = 0; idx < collection.length; idx++)
-       if (predicate(collection[idx])) return collection[idx]
+     for (let i = 0; i < collection.length; i++)
+       if (predicate(collection[i])) return collection[i]
 
      return undefined
    },
@@ -57,8 +57,8 @@ const fi = (function() {
 
      const newArr = []
 
-     for (let idx = 0; idx < collection.length; idx++)
-       if (predicate(collection[idx])) newArr.push(collection[idx])
+     for (let i = 0; i < collection.length; i++)
+       if (predicate(collection[i])) newArr.push(collection[i])
 
      return newArr
    },
@@ -107,7 +107,7 @@ const fi = (function() {
 
    uniqSorted: function(collection, iteratee) {
      const sorted = [collection[0]]
-     for (let idx = 1; idx < collection.length; idx++) {
+     for (let i = 1; i < collection.length; i++) {
        if (sorted[idx-1] !== collection[idx])
          sorted.push(collection[idx])
      }
@@ -149,10 +149,6 @@ const fi = (function() {
        values.push(obj[key])
      }
      return values
-
-     // Using the custom 'map' method from above
-     // return this.map(obj, (value) => value)
-
    },
 
    functions: function(obj) {
