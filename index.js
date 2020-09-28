@@ -16,12 +16,12 @@ const fi = (function() {
     map: function(collection, iteratee) {
       if (!(collection instanceof Array))
           collection = Object.values(collection)
-  
+
         const newArr = []
-  
+
         for (let idx = 0; idx < collection.length; idx++)
           newArr.push(iteratee(collection[idx]))
-  
+
         return newArr
     },
 
